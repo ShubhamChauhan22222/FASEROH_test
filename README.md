@@ -43,7 +43,7 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
           ))
   
   - **Architecture diagram:**
-     ![LSTM Architecture](https://i.imgur.com/HnwDUkJ.png) 
+     ![LSTM Architecture](https://i.imgur.com/atonrRY.png) 
 
 - **transformer.ipynb**  
   Contains the implementation of the Transformer model for learning Taylor series expansions.
@@ -73,7 +73,7 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
       )
   
   - **Architecture diagram:**
-    ![Transformer Architecture](https://i.imgur.com/DkbNnIa.png)  
+    ![Transformer Architecture](https://i.imgur.com/j8GN4wK.png)  
 
 
 ---
