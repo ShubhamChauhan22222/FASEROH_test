@@ -2,10 +2,10 @@
 
 This repository contains the work for the **FASEROH Project** evaluation for prospective GSoC 2025 applicants. It includes two Jupyter notebooks demonstrating solutions for the following tasks completed:
 
-- **Common Task 1: Dataset Preprocessing**  
+- **Common Task 1: Dataset Preprocessing** 
   Used Sympy to generate dataset of functions with their Taylor expansions (up to the fourth order) and tokenize the dataset.
 
-- **Common Task 2: LSTM Model**  
+- **Common Task 2: LSTM Model** 
   Trained an LSTM-based sequence-to-sequence model to learn the Taylor expansion of each function.
 
 - **Specific Task 3: Transformer Model**  
@@ -15,12 +15,26 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
 
 ## Repository Contents
 
-- **LSTM.ipynb**  
+- **[dataste.py](https://github.com/ShubhamChauhan22222/FASEROH_test/blob/main/dataset.py)**
+  
+  Functions are generated using Sympy.
+  - **Functionality:**  
+    - Randomly generates symbolic mathematical functions using a predefined vocabulary of operators and functions.
+    - Supports unary (sin, exp, etc.) and binary (+, *, etc.) operations.
+    - Ensures generated functions are valid SymPy expressions.
+  
+  - **Key Methods:**  
+    - generate_expression(): Recursively builds function strings.
+    - sequence_to_sympy(): Converts token sequences into SymPy expressions.
+    - generate_functions(): Produces a list of num_samples valid functions.
+  
+- **[LSTM.ipynb](https://github.com/ShubhamChauhan22222/FASEROH_test/blob/main/LSTM.ipynb)**
+  
   Contains the implementation of the LSTM model for learning Taylor series expansions.
   
   **Approach:**  
-  - **Dataset Preprocessing:**  
-    - Functions are generated using Sympy.
+  - **Dataset Preprocessing:**
+    - Functions are generated using the class GenerateFunction. Only 100 functions were genertaed to keep it simple.
     - Taylor expansions are computed up to the fourth order.
     - The dataset is tokenized to build the vocabulary.
     - Added special tokens `<SOS>`, `<EOS>`, and `<UNK>`.
@@ -45,12 +59,14 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
   - **Architecture diagram:**
      ![LSTM Architecture](https://i.imgur.com/atonrRY.png) 
 
-- **transformer.ipynb**  
+- **[transformer.ipynb](https://github.com/ShubhamChauhan22222/FASEROH_test/blob/main/transformer.ipynb)**
+  
   Contains the implementation of the Transformer model for learning Taylor series expansions.
   
   **Approach:**  
-  - **Dataset Preprocessing:**  
-    - Same as for LSTM.
+  - **Dataset Preprocessing:**
+    - Default Functions were used.
+    - And same as for LSTM.
   - **Transformer Model Architecture:**  
     - Uses source and target embeddings with positional encoding.
     - Transformer encoder and decoder layers are employed.
