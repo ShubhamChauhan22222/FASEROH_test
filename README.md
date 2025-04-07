@@ -74,28 +74,3 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
   
   - **Architecture diagram:**
     ![Transformer Architecture](https://i.imgur.com/j8GN4wK.png)  
-
-
----
-
-## How to Run
-
-1. **Clone the Repository:**
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-2. **Environment Setup:**
-
-3. 
-   Create a virtual environment and install the necessary packages:
-   ```bash
-   pip install -r requirements.txt
-4. **Run the Notebooks: Launch Jupyter Notebook:**
-   ```bash
-   jupyter notebook
-   
-Open and run the following notebooks:
-
-`LSTM.ipynb`
-
-`transformer.ipynb`
