@@ -1,7 +1,0 @@
-sympy
-pandas
-numpy
-nltk
-collections
-random
-torch
