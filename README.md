@@ -66,10 +66,7 @@ This repository contains the work for the **FASEROH Project** evaluation for GSo
   
   **Approach:**  
   - **Dataset Preprocessing:**
-    - Default Functions were used for transformers as random generated functions usually have large sequence length(even more than 50,000) making training not possible with         current computational resources but we can also train with random functions.
-    - Taylor expansions are computed up to the fourth order.
-    - The dataset is tokenized to build the vocabulary.
-    - Added special tokens `<SOS>`, `<EOS>`, and `<UNK>`.
+    - Same as LSTM.
   - **Transformer Model Architecture:**  
     - Uses source and target embeddings with positional encoding.
     - Transformer encoder and decoder layers are employed.
@@ -92,4 +89,14 @@ This repository contains the work for the **FASEROH Project** evaluation for GSo
       )
   
   - **Architecture diagram:**
-    ![Transformer Architecture](https://i.imgur.com/j8GN4wK.png)  
+    ![Transformer Architecture](https://i.imgur.com/j8GN4wK.png)
+
+
+## Results
+- The data generation pipeline was working good and we can generate as many functions and even add more types and variations.
+- Tokenization of both the function and its expansion were done using word_tokenize from nltk library with added EOS and SOS tokens.
+- Two dictionaries were created vocab_to_int and int_to_vocab for using further during testing.
+- Both the models were trained on GPU P100 on kaggle and the loss was decreasing with epochs indicating smooth training.
+- Some samples were tested and outputs were correct as expected.
+- Finally, if we want we can generate thousands of functions and their expansions, train them to get better results.
+- For future, we can further implement reinforcement learning to ensure correct and valid function representations.
