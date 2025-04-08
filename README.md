@@ -1,6 +1,6 @@
 # Fast Accurate Symbolic Empirical Representation Of Histograms Project - GSoC 2025 Evaluation Test
 
-This repository contains the work for the **FASEROH Project** evaluation for prospective GSoC 2025 applicants. It includes two Jupyter notebooks demonstrating solutions for the following tasks completed:
+This repository contains the work for the **FASEROH Project** evaluation for GSoC 2025. It includes two Jupyter notebooks and one python file demonstrating solutions for the following tasks completed:
 
 - **Common Task 1: Dataset Preprocessing** 
   Used Sympy to generate dataset of functions with their Taylor expansions (up to the fourth order) and tokenize the dataset.
@@ -15,13 +15,14 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
 
 ## Repository Contents
 
-- **[dataste.py](https://github.com/ShubhamChauhan22222/FASEROH_test/blob/main/dataset.py)**
+- **[dataset.py](https://github.com/ShubhamChauhan22222/FASEROH_test/blob/main/dataset.py)**
   
   Functions are generated using Sympy.
   - **Functionality:**  
     - Randomly generates symbolic mathematical functions using a predefined vocabulary of operators and functions.
     - Supports unary (sin, exp, etc.) and binary (+, *, etc.) operations.
     - Ensures generated functions are valid SymPy expressions.
+    - It takes the parameter to generate the no. of function. In LSTM notebook I only generated 100 functions but we can generate as many as we want.
   
   - **Key Methods:**  
     - generate_expression(): Recursively builds function strings.
@@ -34,7 +35,7 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
   
   **Approach:**  
   - **Dataset Preprocessing:**
-    - Functions are generated using the class GenerateFunction. Only 100 functions were genertaed to keep it simple.
+    - Functions are generated using the class GenerateFunction from dataset.py. Only 100 functions were genertaed to keep it simple.
     - Taylor expansions are computed up to the fourth order.
     - The dataset is tokenized to build the vocabulary.
     - Added special tokens `<SOS>`, `<EOS>`, and `<UNK>`.
@@ -65,8 +66,10 @@ This repository contains the work for the **FASEROH Project** evaluation for pro
   
   **Approach:**  
   - **Dataset Preprocessing:**
-    - Default Functions were used.
-    - And same as for LSTM.
+    - Default Functions were used for transformers as random generated functions usually have large sequence length(even more than 50,000) making training not possible with         current computational resources but we can also train with random functions.
+    - Taylor expansions are computed up to the fourth order.
+    - The dataset is tokenized to build the vocabulary.
+    - Added special tokens `<SOS>`, `<EOS>`, and `<UNK>`.
   - **Transformer Model Architecture:**  
     - Uses source and target embeddings with positional encoding.
     - Transformer encoder and decoder layers are employed.
